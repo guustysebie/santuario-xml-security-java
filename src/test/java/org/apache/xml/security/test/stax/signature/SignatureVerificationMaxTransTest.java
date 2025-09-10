@@ -43,6 +43,7 @@ import org.apache.xml.security.test.stax.utils.StAX2DOM;
 import org.apache.xml.security.utils.XMLUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.w3c.dom.Document;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -69,6 +70,7 @@ class SignatureVerificationMaxTransTest extends AbstractSignatureVerificationTes
     }
 
     @Test
+    @DisabledInNativeImage
     void testMaximumAllowedTransformsPerReference() throws Exception {
         // Read in plaintext document
         Document document = XMLUtils.readResource("ie/baltimore/merlin-examples/merlin-xmlenc-five/plaintext.xml",

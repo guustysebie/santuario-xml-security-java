@@ -21,15 +21,20 @@ package org.apache.xml.security.test.javax.xml.crypto.dsig;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;
+import java.security.Provider;
 import java.security.Security;
 
 import javax.xml.crypto.dsig.XMLSignatureException;
 import javax.xml.crypto.dsig.dom.DOMValidateContext;
 
+import org.apache.jcp.xml.dsig.internal.dom.XMLDSigRI;
 import org.apache.xml.security.test.javax.xml.crypto.KeySelectors;
 import org.apache.xml.security.utils.resolver.ResourceResolver;
 import org.apache.xml.security.utils.resolver.implementations.ResolverLocalFilesystem;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 
 import static org.apache.xml.security.test.XmlSecTestEnvironment.resolveFile;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -39,13 +44,41 @@ import static org.junit.jupiter.api.Assertions.fail;
 /**
  * This is a test for a forbidden Reference algorithm.
  */
+@DisabledInNativeImage
 class JSRForbiddenReferenceTest {
 
     private final SignatureValidator validator;
     private final File dir;
+    private static String providerName = null;
 
-    static {
-        Security.insertProviderAt(new org.apache.jcp.xml.dsig.internal.dom.XMLDSigRI(), 1);
+
+    @BeforeAll
+    static void setup() {
+        System.out.println("BEFORE++++++++++++++++++++++++++++++++++++");
+        for (Provider provider : Security.getProviders()) {
+            System.out.println(provider.getName());
+        }
+        XMLDSigRI provider = new org.apache.jcp.xml.dsig.internal.dom.XMLDSigRI();
+        providerName = provider.getName();
+        Security.removeProvider(providerName);
+
+        System.out.println("DURING++++++++++++++++++++++++++++++++++++");
+        for (Provider provider2 : Security.getProviders()) {
+            System.out.println(provider2.getName());
+        }
+        Security.insertProviderAt(provider, 1);
+
+        System.out.println("BEFORE++++++++++++++++++++++++++++++++++++");
+        for (Provider provider2 : Security.getProviders()) {
+            System.out.println(provider2.getName());
+        }
+    }
+
+    @AfterAll
+    static void teardown() {
+        if (providerName != null) {
+            Security.removeProvider(providerName);
+        }
     }
 
     public JSRForbiddenReferenceTest() {

@@ -51,6 +51,7 @@ import org.apache.xml.security.utils.resolver.implementations.ResolverDirectHTTP
 import org.apache.xml.security.utils.resolver.implementations.ResolverLocalFilesystem;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.w3c.dom.Document;
 
 import static org.apache.xml.security.test.XmlSecTestEnvironment.TRANSMITTER_KS_PASSWORD;
@@ -73,6 +74,7 @@ class SignatureVerificationReferenceURIResolverRemoteReferenceTest extends Abstr
     }
 
     @Test
+    @DisabledInNativeImage
     void testSignatureVerificationWithExternalFilesystemXMLReference() throws Exception {
         // Read in plaintext document
         Document document = XMLUtils.readResource("ie/baltimore/merlin-examples/merlin-xmlenc-five/plaintext.xml",
@@ -129,6 +131,7 @@ class SignatureVerificationReferenceURIResolverRemoteReferenceTest extends Abstr
     }
 
     @Test
+    @DisabledInNativeImage
     void testSignatureVerificationWithExternalFilesystemBinaryReference() throws Exception {
         // Read in plaintext document
         Document document = XMLUtils.readResource("ie/baltimore/merlin-examples/merlin-xmlenc-five/plaintext.xml",
@@ -187,6 +190,7 @@ class SignatureVerificationReferenceURIResolverRemoteReferenceTest extends Abstr
     }
 
     @Test
+    @DisabledInNativeImage
     void testSignatureVerificationWithExternalHttpReference() throws Exception {
 
         Proxy proxy = HttpRequestRedirectorProxy.startHttpEngine();

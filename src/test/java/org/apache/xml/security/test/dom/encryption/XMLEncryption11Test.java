@@ -40,6 +40,7 @@ import org.apache.xml.security.utils.KeyUtils;
 import org.apache.xml.security.utils.XMLUtils;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.w3c.dom.Document;
@@ -473,6 +474,7 @@ class XMLEncryption11Test extends XMLEncryption11TestAbstract {
             "AGRMNT.2, plaintext.xml, EC-P384_SHA256WithECDSA-v02.p12, PKCS12, passwd, test-certificate, http://www.w3.org/2001/04/xmlenc#kw-aes192, http://www.w3.org/2009/xmlenc11#aes192-gcm, http://www.w3.org/2001/04/xmldsig-more#sha384",
             "AGRMNT.3, plaintext.xml, EC-P521_SHA256WithECDSA-v02.p12, PKCS12, passwd, test-certificate, http://www.w3.org/2001/04/xmlenc#kw-aes256, http://www.w3.org/2009/xmlenc11#aes256-gcm, http://www.w3.org/2001/04/xmlenc#sha512",
     })
+    @DisabledInNativeImage
     void testAgreementKeyEncryptDecryptDocument(String w3cTag,
                                                String data,
                                                String keystoreFile, String keystoreType,
@@ -543,6 +545,7 @@ class XMLEncryption11Test extends XMLEncryption11TestAbstract {
             "AGRMNT.2-dec, cipherText__EC-P384__aes192-gcm__kw-aes192__ECDH-ES__ConcatKDF-2.xml, EC-P384_SHA256WithECDSA-v02.p12, PKCS12, passwd, test-certificate",
             "AGRMNT.3-dec, cipherText__EC-P521__aes256-gcm__kw-aes256__ECDH-ES__ConcatKDF-3.xml, EC-P521_SHA256WithECDSA-v02.p12, PKCS12, passwd, test-certificate",
     })
+    @DisabledInNativeImage
     void testAgreementKeyDecryptDocument(String w3cTag,
                                                        String encryptedData,
                                                        String keystoreFile, String keystoreType,
@@ -575,6 +578,7 @@ class XMLEncryption11Test extends XMLEncryption11TestAbstract {
             "AGRMNT.5, binary-data.hex, EC-P384.pfx, PKCS12, 1234, certreq-4c7c6242-e408-4391-a7e7-1a87a2ef2ba8, http://www.w3.org/2001/04/xmlenc#kw-aes192, http://www.w3.org/2009/xmlenc11#aes192-gcm, http://www.w3.org/2001/04/xmldsig-more#sha384",
             "AGRMNT.6, binary-data.hex, EC-P521.pfx, PKCS12, 1234, certreq-61afb173-5eab-475a-8c54-0cb792c82820, http://www.w3.org/2001/04/xmlenc#kw-aes256, http://www.w3.org/2009/xmlenc11#aes256-gcm, http://www.w3.org/2001/04/xmlenc#sha512"
     })
+    @DisabledInNativeImage
     void testAgreementKeyEncryptDecryptData(String w3cTag,
                                                String resourceHexFileName,
                                                String keystoreFile, String keystoreType,
@@ -647,6 +651,7 @@ class XMLEncryption11Test extends XMLEncryption11TestAbstract {
             "AGRMNT.5-dec, binary-data.hex, cipherText__EC-P384__aes192-gcm__kw-aes192__ECDH-ES__ConcatKDF-5.xml, EC-P384.pfx, PKCS12, 1234, certreq-4c7c6242-e408-4391-a7e7-1a87a2ef2ba8",
             "AGRMNT.6-dec, binary-data.hex, cipherText__EC-P521__aes256-gcm__kw-aes256__ECDH-ES__ConcatKDF-6.xml, EC-P521.pfx, PKCS12, 1234, certreq-61afb173-5eab-475a-8c54-0cb792c82820"
     })
+    @DisabledInNativeImage
     void testAgreementKeyDecryptData(String w3cTag,
                                                    String resourceHexFileName,
                                                    String decryptResourceData,

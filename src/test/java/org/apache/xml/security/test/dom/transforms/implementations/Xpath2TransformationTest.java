@@ -30,6 +30,7 @@ import org.apache.xml.security.transforms.params.XPath2FilterContainer;
 import org.apache.xml.security.utils.Constants;
 import org.apache.xml.security.utils.XMLUtils;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.platform.commons.util.StringUtils;
@@ -198,6 +199,7 @@ class Xpath2TransformationTest {
             "intersect:://ToBeSigned;subtract:://NotToBeSigned, //ToBeSigned::2;//Data::2;//NotToBeSigned::0;//ReallyToBeSigned::0",
             "intersect:://ToBeSigned;subtract:://NotToBeSigned;union:://ReallyToBeSigned, //ToBeSigned::2;//Data::3;//NotToBeSigned::0;//ReallyToBeSigned::1",
     })
+    @DisabledInNativeImage
     void testXPath2TransformExample(String xPathFilter, String resultValidationXPath) throws Exception {
         Map<String, String> filterConfiguration = convertStringToMap(xPathFilter);
         Map<String, String> assertNodeCountByXPaths = convertStringToMap(resultValidationXPath);

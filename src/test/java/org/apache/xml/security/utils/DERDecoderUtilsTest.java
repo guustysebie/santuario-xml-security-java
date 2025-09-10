@@ -24,6 +24,7 @@ import org.apache.xml.security.testutils.KeyTestUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 
@@ -50,6 +51,7 @@ class DERDecoderUtilsTest {
 
     @ParameterizedTest
     @EnumSource(KeyTestUtils.TestKeys.class)
+    @DisabledInNativeImage
     void testGetAlgorithmIdBytesFromKey(KeyTestUtils.TestKeys testKey) throws DERDecodingException, IOException {
 
         byte[] bytes;

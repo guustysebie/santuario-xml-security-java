@@ -57,6 +57,7 @@ import org.apache.xml.security.utils.resolver.ResourceResolverException;
 import org.apache.xml.security.utils.resolver.ResourceResolverSpi;
 import org.apache.xml.security.utils.resolver.implementations.ResolverXPointer;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.w3c.dom.Document;
@@ -120,6 +121,7 @@ class SignatureReferenceTest {
     @CsvSource({
         "//*[local-name()='ToBeSigned'], bZdn277uy+5m4tJ2xU03pY9dH11Hw9zrjp8M76rWdgU=",
         "//*[local-name()='ReallyToBeSigned'], PiON4xCpziq9v0XlV9wrDCQk3mqkHpZWM6fKPiyUVEY="})
+    @DisabledInNativeImage
     void testSigningTransformationReference(String xpathValue, String expectedDigest) throws Throwable {
         // given
         Document doc = TestUtils.getTestDocumentFromResource("input-santuario-623.xml");

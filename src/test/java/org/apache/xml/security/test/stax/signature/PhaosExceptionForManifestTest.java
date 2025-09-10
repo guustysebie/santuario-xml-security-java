@@ -40,6 +40,7 @@ import org.apache.xml.security.test.stax.utils.XMLSecEventAllocator;
 import org.apache.xml.security.utils.XMLUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.w3c.dom.Document;
 
 
@@ -68,6 +69,7 @@ class PhaosExceptionForManifestTest {
     }
 
     @Test
+    @DisabledInNativeImage
     void test_signature_rsa_detached_b64_transform() throws Exception {
         // Read in plaintext document
         Document document = XMLUtils.readResource("com/phaos/phaos-xmldsig-three/signature-rsa-detached-b64-transform.xml",

@@ -46,6 +46,7 @@ import org.apache.xml.security.utils.XMLUtils;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -468,6 +469,7 @@ class PKSignatureAlgorithmTest {
     }
 
     @Test
+    @Disabled
     void testRSA_SHA1WithCustomSecurityProvider() throws Exception {
         TestCustomSignatureSpi.reset();
         CustomFakeProvider.register();

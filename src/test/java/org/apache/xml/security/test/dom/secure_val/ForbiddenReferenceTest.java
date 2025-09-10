@@ -29,6 +29,7 @@ import org.apache.xml.security.utils.XMLUtils;
 import org.apache.xml.security.utils.resolver.ResourceResolver;
 import org.apache.xml.security.utils.resolver.implementations.ResolverLocalFilesystem;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.w3c.dom.Element;
 
 import static org.apache.xml.security.test.XmlSecTestEnvironment.resolveFile;
@@ -46,6 +47,7 @@ class ForbiddenReferenceTest extends InteropTestBase {
     }
 
     @Test
+    @DisabledInNativeImage
     void testLocalFilesystem() throws Exception {
         try {
             readAndVerifyManifest("signature.xml");

@@ -38,6 +38,7 @@ import org.apache.xml.security.utils.XMLUtils;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -69,6 +70,7 @@ class XMLParserTest {
     }
 
     @Test
+    @DisabledInNativeImage
     void testRSA_SHA1() throws Exception {
         assertFalse(CustomXMLParserImpl.isCalled());
 

@@ -62,6 +62,7 @@ import org.apache.xml.security.test.stax.utils.XMLSecEventAllocator;
 import org.apache.xml.security.utils.XMLUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.w3c.dom.Document;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -76,6 +77,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  *  These are separated out from BaltimoreTest as we have to change the default configuration to set
  *  * "AllowNotSameDocumentReferences" to "true".
  */
+@DisabledInNativeImage
 class BaltimoreRemoteReferenceTest {
 
     // Define the Keys

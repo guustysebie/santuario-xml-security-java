@@ -40,6 +40,7 @@ import org.apache.xml.security.utils.resolver.ResourceResolverSpi;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -64,6 +65,7 @@ class InitTest {
     }
 
     @Test
+    @DisabledInNativeImage
     void testFileInit() throws Exception {
         assertFalse(Init.isInitialized());
         Init.init();

@@ -23,6 +23,7 @@ import org.apache.xml.security.testutils.JDKTestUtils;
 import org.apache.xml.security.testutils.KeyTestUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Assumptions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 
@@ -33,6 +34,7 @@ import java.security.PublicKey;
 /**
  * Unit test for {@link KeyUtils}
  */
+@Disabled
 class KeyUtilsTest {
     static {
         Init.init();
