@@ -40,6 +40,7 @@ import org.apache.xml.security.test.javax.xml.crypto.KeySelectors;
 import org.apache.xml.security.utils.resolver.ResourceResolver;
 import org.apache.xml.security.utils.resolver.implementations.ResolverLocalFilesystem;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 
 import static org.apache.xml.security.test.XmlSecTestEnvironment.resolveFile;
 import static org.apache.xml.security.test.XmlSecTestEnvironment.resolvePath;
@@ -85,6 +86,7 @@ class IaikCoreFeaturesTest {
     }
 
     @Test
+    @DisabledInNativeImage
     void test_signatureTypesSignature() throws Exception {
         String file = "signatureTypesSignature.xml";
 

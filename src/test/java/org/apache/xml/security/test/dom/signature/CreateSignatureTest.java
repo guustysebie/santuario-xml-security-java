@@ -53,6 +53,7 @@ import org.apache.xml.security.utils.Constants;
 import org.apache.xml.security.utils.ElementProxy;
 import org.apache.xml.security.utils.XMLUtils;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -148,6 +149,7 @@ class CreateSignatureTest {
     }
 
     @Test
+    @DisabledInNativeImage
     void testXPathSignature() throws Exception {
         Document doc = TestUtils.newDocument();
         doc.appendChild(doc.createComment(" Comment before "));

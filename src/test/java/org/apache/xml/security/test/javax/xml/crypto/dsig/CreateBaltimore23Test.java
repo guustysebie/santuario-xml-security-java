@@ -82,6 +82,7 @@ import org.apache.xml.security.utils.XMLUtils;
 import org.apache.xml.security.utils.resolver.ResourceResolver;
 import org.apache.xml.security.utils.resolver.implementations.ResolverLocalFilesystem;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -235,6 +236,7 @@ class CreateBaltimore23Test {
     }
 
     @Test
+    @DisabledInNativeImage
     void test_create_signature_retrievalmethod_rawx509crt()
         throws Exception {
         KeyInfo rm = kifac.newKeyInfo(Collections.singletonList

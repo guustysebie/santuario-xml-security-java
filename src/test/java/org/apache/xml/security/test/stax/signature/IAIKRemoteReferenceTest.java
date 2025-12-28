@@ -50,6 +50,7 @@ import org.apache.xml.security.test.stax.utils.StAX2DOM;
 import org.apache.xml.security.test.stax.utils.XMLSecEventAllocator;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -96,6 +97,7 @@ class IAIKRemoteReferenceTest {
 
     // See SANTUARIO-322
     @Test
+    @DisabledInNativeImage
     void test_transforms_signatures_base64DecodeSignature() throws Exception {
         // Set up the Key
         Key publicKey = getPublicKey("RSA");
@@ -125,6 +127,7 @@ class IAIKRemoteReferenceTest {
 
     // See SANTUARIO-322
     @Test
+    @DisabledInNativeImage
     void test_transforms_signatures_c14nSignature() throws Exception {
         // Set up the Key
         Key publicKey = getPublicKey("RSA");

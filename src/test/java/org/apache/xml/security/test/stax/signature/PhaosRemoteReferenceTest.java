@@ -43,6 +43,7 @@ import org.apache.xml.security.test.stax.utils.XMLSecEventAllocator;
 import org.apache.xml.security.utils.XMLUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.w3c.dom.Document;
 
 
@@ -53,6 +54,7 @@ import org.w3c.dom.Document;
  * These are separated out from PhaosTest as we have to change the default configuration to set
  * "AllowNotSameDocumentReferences" to "true".
  */
+@DisabledInNativeImage
 class PhaosRemoteReferenceTest {
 
     private final XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();

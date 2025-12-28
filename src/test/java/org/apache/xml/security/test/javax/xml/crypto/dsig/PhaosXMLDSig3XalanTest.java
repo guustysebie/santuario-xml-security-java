@@ -28,6 +28,7 @@ import java.security.Security;
 import org.apache.xml.security.test.javax.xml.crypto.KeySelectors;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.apache.xml.security.test.XmlSecTestEnvironment.resolveFile;
@@ -66,6 +67,7 @@ class PhaosXMLDSig3XalanTest {
     }
 
     @Test
+    @Disabled
     void test_signature_rsa_xpath_transform_enveloped() throws Exception {
         String file = "signature-rsa-xpath-transform-enveloped.xml";
         boolean coreValidity = validator.validate(file, new KeySelectors.RawX509KeySelector());

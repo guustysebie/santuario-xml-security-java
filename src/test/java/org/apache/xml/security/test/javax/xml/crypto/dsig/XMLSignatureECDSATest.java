@@ -33,6 +33,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -99,6 +100,7 @@ class XMLSignatureECDSATest extends XMLSignatureAbstract {
                     "http://www.w3.org/2021/04/xmldsig-more#ecdsa-sha3-384, secp256r1",
                     "http://www.w3.org/2021/04/xmldsig-more#ecdsa-sha3-512, secp256r1"
             })
+    @DisabledInNativeImage
     void createECDSASignatureTest(String signatureAlgorithmURI, String alias) throws Exception {
         String jceAlg = JCEMapper.translateURItoJCEID(signatureAlgorithmURI);
         Assertions.assertNotNull(jceAlg, "The JCE algorithm for [" + signatureAlgorithmURI + "] must not be null!");

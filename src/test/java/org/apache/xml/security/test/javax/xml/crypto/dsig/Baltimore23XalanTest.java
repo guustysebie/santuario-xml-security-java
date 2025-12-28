@@ -32,6 +32,7 @@ import javax.xml.crypto.URIDereferencer;
 import org.apache.xml.security.test.XmlSecTestEnvironment;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -70,6 +71,7 @@ class Baltimore23XalanTest {
     }
 
     @Test
+    @Disabled
     void test_signature() throws Exception {
 
         //

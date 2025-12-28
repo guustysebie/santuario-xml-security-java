@@ -30,6 +30,7 @@ import org.apache.xml.security.signature.XMLSignature;
 import org.apache.xml.security.test.dom.DSNamespaceContext;
 import org.apache.xml.security.utils.XMLUtils;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -47,6 +48,7 @@ class Santuario499Test {
     }
 
     @Test
+    @DisabledInNativeImage
     void testXSLTTransform() throws Exception {
 
         URL signatureFile = this.getClass().getResource("Arbeidstijd_anonymous.xml");

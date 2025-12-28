@@ -48,6 +48,7 @@ import org.apache.xml.security.utils.JDKXPathFactory;
 import org.apache.xml.security.utils.XMLUtils;
 import org.apache.xml.security.utils.resolver.ResourceResolver;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -57,6 +58,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Test the JDKXPathFactory by adding a custom transform that hard-wires the use of JDKXPathFactory, instead of
  * checking to see whether Xalan is on the classpath or not
  */
+@DisabledInNativeImage
 class JDKXPathFactoryTest {
 
     private final KeyPair kp;
